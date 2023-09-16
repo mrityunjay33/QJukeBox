@@ -9,7 +9,7 @@ import com.example.demo.commands.CreatePlaylistCommand;
 import com.example.demo.commands.DeletePlaylistCommand;
 import com.example.demo.commands.DeleteSongFromPlaylistCommand;
 import com.example.demo.commands.ListSongsCommand;
-import com.example.demo.commands.LoadPlaylistCommand;
+import com.example.demo.commands.LoadPlaylistCommand;s
 import com.example.demo.commands.NextSongCommand;
 import com.example.demo.commands.PlaySongCommand;
 import com.example.demo.commands.PreviousSongCommand;
@@ -37,17 +37,6 @@ public class Configuration {
                 return instance;
             }
 
-    		// // Initialize repositories
-            // private final IGreetingRepository greetingRepository = new GreetingRepository();
-    
-            // // Initialize services
-            // private final GreetingService greetingService = new GreetingService(greetingRepository);
-
-            // // Initialize commands
-            // private final CreateGreetingCommand createGreetingCommand = new CreateGreetingCommand(greetingService);
-            // private final ListGreetingCommand listGreetingCommand = new ListGreetingCommand(greetingService);
-            // private final GetGreetingCommand  getGreetingCommand = new GetGreetingCommand(greetingService);
-
             ISongRepository iSongRepository= new SongRepository();
             IPlaylistRepository iPlaylistRepository= new PlaylistRepository();
             IPlaylistService iPlaylistService= new PlaylistService(iSongRepository, iPlaylistRepository);
@@ -70,9 +59,6 @@ public class Configuration {
 
             // Register commands 
             private void registerCommands(){
-                // commandRegistry.registerCommand(CommandKeyword.CREATE_GREETING_COMMAND.getName(),createGreetingCommand);
-                // commandRegistry.registerCommand(CommandKeyword.LIST_GREETING_COMMAND.getName(),listGreetingCommand);
-                // commandRegistry.registerCommand(CommandKeyword.GET_GREETING_COMMAND.getName(),getGreetingCommand);
                    commandRegistry.registerCommand(CommandKeyword.ADD_SONG_COMMAND.getName(), addSongCommand);
                    commandRegistry.registerCommand(CommandKeyword.CREATE_PLAYLIST_COMMAND.getName(), createPlaylistCommand);
                    commandRegistry.registerCommand(CommandKeyword.ADD_SONG_TO_PLAYLIST_COMMAND.getName(), addSongToPlaylistCommand);
